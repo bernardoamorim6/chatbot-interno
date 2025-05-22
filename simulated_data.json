@@ -1,0 +1,116 @@
+{
+    "destinos": [
+        {"nome": "Lisboa", "disponivel": true},
+        {"nome": "Porto", "disponivel": true},
+        {"nome": "Braga", "disponivel": true},
+        {"nome": "Faro", "disponivel": true},
+        {"nome": "Madrid", "disponivel": true},
+        {"nome": "Turim", "disponivel": true},
+        {"nome": "Milão", "disponivel": true},
+        {"nome": "Toulouse", "disponivel": true}
+    ],
+    "tipos_carga": [
+        {
+            "nome": "paletes",
+            "descricao": "Transporte de mercadorias em paletes standard.",
+            "limitacoes": "Peso máximo por palete: 1000kg. Altura máxima: 2.2m."
+        },
+        {
+            "nome": "contentores",
+            "descricao": "Transporte em contentores de 20 ou 40 pés.",
+            "limitacoes": "Disponível para rotas internacionais."
+        },
+        {
+            "nome": "carga refrigerada",
+            "descricao": "Transporte de mercadorias que necessitam de controlo de temperatura.",
+            "limitacoes": "Temperatura controlada entre -20°C e +20°C. Requer aviso prévio de 48h."
+        },
+        {
+            "nome": "mercadorias perigosas",
+            "descricao": "Transporte de mercadorias perigosas (ADR).",
+            "limitacoes": "Classes ADR 2, 3, 4.1, 4.2, 4.3, 5.1, 5.2, 6.1, 6.2, 8, 9. Documentação específica obrigatória."
+        }
+    ],
+    "precos_base": {
+        "Lisboa": {"por_kg": 0.5, "por_m3": 50},
+        "Porto": {"por_kg": 0.6, "por_m3": 60},
+        "Braga": {"por_kg": 0.65, "por_m3": 65},
+        "Faro": {"por_kg": 0.7, "por_m3": 70},
+        "Madrid": {"por_kg": 1.2, "por_m3": 120},
+        "Turim": {"por_kg": 1.5, "por_m3": 150},
+        "Milão": {"por_kg": 1.5, "por_m3": 150},
+        "Toulouse": {"por_kg": 1.5, "por_m3": 150}
+    },
+    "sobretaxas": {
+        "carga_refrigerada": 1.25, 
+        "mercadorias_perigosas": 1.5 
+    },
+    "tempos_transito": [
+        {
+            "origem": "Porto",
+            "destino": "Lisboa",
+            "tipo_carga": "paletes",
+            "tempo_estimado_dias": "1 dia útil"
+        },
+        {
+            "origem": "Porto",
+            "destino": "Braga",
+            "tipo_carga": "paletes",
+            "tempo_estimado_dias": "1 dia útil"
+        },
+        {
+            "origem": "Porto",
+            "destino": "Faro",
+            "tipo_carga": "paletes",
+            "tempo_estimado_dias": "2-3 dias úteis"
+        },
+        {
+            "origem": "Porto",
+            "destino": "Madrid",
+            "tipo_carga": "contentores",
+            "tempo_estimado_dias": "2-3 dias úteis"
+        },
+        {
+            "origem": "Porto",
+            "destino": "Toulouse",
+            "tipo_carga": "contentores",
+            "tempo_estimado_dias": "3-4 dias úteis"
+        },
+        {
+            "origem": "Porto",
+            "destino": "Turim",
+            "tipo_carga": "contentores",
+            "tempo_estimado_dias": "4-5 dias úteis"
+        },
+        {
+            "origem": "Porto",
+            "destino": "Milão",
+            "tipo_carga": "contentores",
+            "tempo_estimado_dias": "4-5 dias úteis"
+        },
+        {
+            "origem": "Porto",
+            "destino": "Lisboa",
+            "tipo_carga": "carga_refrigerada",
+            "tempo_estimado_dias": "1-2 dias úteis"
+        },
+        {
+            "origem": "Porto",
+            "destino": "Madrid",
+            "tipo_carga": "carga_refrigerada",
+            "tempo_estimado_dias": "2-3 dias úteis"
+        },
+        {
+            "origem": "Porto",
+            "destino": "Lisboa",
+            "tipo_carga": "mercadorias_perigosas",
+            "tempo_estimado_dias": "1-2 dias úteis (sujeito a confirmação)"
+        },
+        {
+            "origem": "Porto",
+            "destino": "Madrid",
+            "tipo_carga": "mercadorias_perigosas",
+            "tempo_estimado_dias": "2-3 dias úteis (sujeito a confirmação)"
+        }
+    ]
+}

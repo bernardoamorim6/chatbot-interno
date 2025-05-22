@@ -1,0 +1,81 @@
+/* Additional CSS for document list styling */
+.document-list {
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.document-item {
+    margin-bottom: 8px;
+    background-color: var(--color-bot-message);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border: 2px solid rgba(34, 62, 110, 0.3); /* Using primary color with 30% opacity */
+    padding: 2px;
+}
+
+.document-item:hover {
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary-light);
+}
+
+.document-link {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 12px;
+    color: var(--color-text-dark);
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.document-item:hover .document-link {
+    color: var(--color-white);
+}
+
+.document-name {
+    font-weight: bold;
+}
+
+.document-date {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.document-item:hover .document-date {
+    color: #ddd;
+}
+
+.document-count {
+    font-style: italic;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+/* Pagination styling if needed */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.pagination-btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin: 0 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.pagination-btn:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.pagination-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

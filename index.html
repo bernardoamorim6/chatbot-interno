@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot de Documentos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="document_styles.css">
+</head>
+<body>
+    <div id="chatbot-container">
+        <div id="chatbot-header">
+            <h2>Assistente de Documentos</h2>
+        </div>
+        <div id="chat-window">
+            <ul id="message-list">
+                <!-- Chat messages will appear here -->
+            </ul>
+        </div>
+        <div id="suggestions-toggle">
+            <button id="toggle-suggestions">Sugestões</button>
+        </div>
+        <div id="suggestions-container" class="hidden">
+            <button class="suggestion-btn">Faturas do cliente C001</button>
+            <button class="suggestion-btn">Guias de transporte C002</button>
+            <button class="suggestion-btn">Todos os documentos C003</button>
+        </div>
+        <div id="chatbot-input-area">
+            <input type="text" id="user-input" placeholder="Escreva a sua mensagem...">
+            <button id="send-button">Enviar</button>
+        </div>
+    </div>
+    <script src="document_retriever.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

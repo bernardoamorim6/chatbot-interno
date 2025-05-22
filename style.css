@@ -1,0 +1,218 @@
+:root {
+    --color-primary: #223e6e;
+    --color-primary-light: #2a4b85;
+    --color-primary-hover: #1a2f54;
+    --color-background: #f4f4f4;
+    --color-white: #fff;
+    --color-bot-message: #e9e9eb;
+    --color-text-dark: #333;
+    --color-border: #ddd;
+    --color-input-border: #ccc;
+    --color-scrollbar-track: #f1f1f1;
+    --color-scrollbar-thumb: #c5c5c5;
+    --color-scrollbar-thumb-hover: #a8a8a8;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--color-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh; /* Adjusted to prevent scrollbars if not needed */
+}
+
+#chatbot-container {
+    width: 380px;
+    max-width: 100%;
+    height: 650px; /* Increased height */
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#chatbot-header {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 15px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#chatbot-header h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+#chat-window {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    border-bottom: 1px solid var(--color-border);
+}
+
+#message-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin-bottom: 12px;
+    padding: 10px 10px;
+    border-radius: 18px;
+    max-width: 65%;
+    line-height: 1.3;
+    font-size: 0.95em;
+    position: relative;
+}
+
+.bot-message {
+    background-color: var(--color-bot-message);
+    color: var(--color-text-dark);
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+    margin-left: 24px;
+    position: relative;
+}
+
+.bot-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    position: absolute;
+    left: -30px;
+    bottom: 0;
+    object-fit: cover;
+}
+
+.user-message {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+    margin-right: 24px;
+}
+
+#chatbot-input-area {
+    display: flex;
+    padding: 15px;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-border);
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--color-input-border);
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 0.95em;
+}
+
+#user-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.2rem rgba(34, 62, 110, 0.25);
+}
+
+#send-button {
+    padding: 10px 20px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease;
+}
+
+#send-button:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* Scrollbar styling for webkit browsers */
+#chat-window::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat-window::-webkit-scrollbar-track {
+    background: var(--color-scrollbar-track);
+    border-radius: 10px;
+}
+
+#chat-window::-webkit-scrollbar-thumb {
+    background: var(--color-scrollbar-thumb);
+    border-radius: 10px;
+}
+
+#chat-window::-webkit-scrollbar-thumb:hover {
+    background: var(--color-scrollbar-thumb-hover);
+}
+
+#suggestions-toggle {
+    padding: 5px 15px;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+}
+
+#toggle-suggestions {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    cursor: pointer;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: all 0.2s ease;
+}
+
+#toggle-suggestions:hover {
+    background-color: var(--color-bot-message);
+}
+
+#suggestions-container {
+    padding: 10px 15px;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    transition: all 0.3s ease;
+    max-height: 200px;
+    overflow: hidden;
+}
+
+#suggestions-container.hidden {
+    max-height: 0;
+    padding: 0 15px;
+    border-top: none;
+}
+
+.suggestion-btn {
+    padding: 8px 12px;
+    background-color: var(--color-bot-message);
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-border);
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.suggestion-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
+
